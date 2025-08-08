@@ -38,11 +38,20 @@
     }
 
     .title {
-      font-size: 28px;
-      font-weight: bold;
-      color: #333;
       text-align: right;
       flex: 1;
+    }
+
+    .main-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1e94c1; /* سماوي */
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000; /* أسود */
     }
 
     /* شريط الأخبار */
@@ -67,7 +76,7 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* الصور */
+    /* صور المنيو */
     .images {
       display: flex;
       flex-direction: column;
@@ -96,7 +105,7 @@
       }
     }
 
-    /* الأزرار */
+    /* الأزرار العادية */
     .buttons {
       text-align: center;
       margin: 30px 0;
@@ -117,37 +126,49 @@
       background-color: #28a745;
     }
 
-    /* الأزرار العائمة */
-    .floating-btn {
+    /* زر الاتصال العائم */
+    .floating-call-btn {
       position: fixed;
       bottom: 30px;
-      left: 30px;
+      left: 25px;
       width: 60px;
       height: 60px;
+      background-color: #28a745;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      cursor: pointer;
-      text-decoration: none;
+      box-shadow: 0 0px 0px rgba(0,0,0,0.3);
       z-index: 999;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
     }
-    .floating-btn.phone {
-      background-color: #28a745;
-      font-size: 0;
-    }
-    .floating-btn.facebook {
-      background-color: #1877f2;
-      right: 30px;
-      left: auto;
-      font-size: 0;
-    }
-    .floating-btn svg {
+
+    .floating-call-btn svg {
       width: 40px;
       height: 40px;
       fill: white;
+    }
+
+    /* زر الفيسبوك */
+    .floating-fb-btn {
+      position: fixed;
+      bottom: 110px;
+      left: 25px;
+      width: 60px;
+      height: 60px;
+      background-color: #1877f2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0px 0px rgba(0,0,0,0.3);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .floating-fb-btn svg {
+      width: 40px;
+      height: 40px;
     }
   </style>
 </head>
@@ -156,7 +177,10 @@
   <!-- الهيدر -->
   <div class="header">
     <div class="header-row">
-      <div class="title">مطعم سردينا للأسماك</div>
+      <div class="title">
+        <span class="main-title">مطعم سردينا للأسماك</span><br>
+        <span class="subtitle">(منيو السفرة)</span>
+      </div>
       <img src="imgs/Logo.svg" alt="لوجو" class="logo">
     </div>
   </div>
@@ -170,30 +194,33 @@
 
   <!-- صور المنيو -->
   <div class="images">
-    <img src="imgs/menu1.jpg" alt="منيو 1">
-    <img src="imgs/menu2.jpg" alt="منيو 2">
-    <img src="imgs/menu3.jpg" alt="منيو 3">
+    <img src="menu2/menu1.jpg" alt="منيو 1">
+    <img src="menu2/menu2.jpg" alt="منيو 2">
+    <img src="menu2/menu3.jpg" alt="منيو 3">
   </div>
 
-  <!-- الأزرار -->
+  <!-- الأزرار العادية -->
   <div class="buttons">
     <a href="tel:01117773757" class="call">اتصل بنا</a>
     <a href="https://www.facebook.com/SardinaSeafood" target="_blank">تابعنا على فيسبوك</a>
   </div>
 
   <!-- زر الاتصال العائم -->
-  <a href="tel:0123" class="floating-btn phone">
+  <a href="tel:0123" class="floating-call-btn" title="اتصال">
     <svg viewBox="0 0 24 24">
-      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.55.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.24 1.05z"/>
+      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 
+      11.36 11.36 0 003.55.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 
+      011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.24 1.05z"/>
     </svg>
   </a>
 
-  <!-- زر فيسبوك العائم -->
-  <a href="https://www.facebook.com/SardinaSeafood" target="_blank" class="floating-btn facebook">
-    <svg viewBox="0 0 24 24">
-      <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24H12.82v-9.294H9.692V11.01h3.128V8.414c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/>
-    </svg>
-  </a>
+<a href="https://www.facebook.com/SardinaSeafood" target="_blank" class="floating-fb-btn" title="تابعنا على فيسبوك">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+    <path fill="white" d="M279.14 288l14.22-92.66h-88.91V132.09c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26
+    S268.43 0 225.36 0C141.09 0 89.09 54.42 89.09 153.12v68.22H0V288h89.09v224h107.8V288z"/>
+  </svg>
+</a>
+
 
 </body>
 </html>
