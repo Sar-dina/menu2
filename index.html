@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطعم سردينا للأسماك</title>
+
+  <!-- خط Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f8f9fa;
+      direction: rtl;
+    }
+
+    /* الهيدر */
+    .header {
+      padding: 20px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 700px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    .logo {
+      height: 80px;
+      width: auto;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      text-align: right;
+      flex: 1;
+    }
+
+    /* شريط الأخبار */
+    .news-ticker {
+      width: 100%;
+      overflow: hidden;
+      background: #1e94c1;
+      padding: 12px 0;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .ticker-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 10s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* الصور */
+    .images {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .images img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (min-width: 768px) {
+      .images {
+        flex-direction: row;
+      }
+
+      .images img {
+        width: 33.3%;
+      }
+    }
+
+    /* الأزرار */
+    .buttons {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      border-radius: 8px;
+      background-color: #1e94c1;
+    }
+
+    .buttons a.call {
+      background-color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <div class="header">
+    <div class="header-row">
+      <div class="title">منيو مطعم سردينا للأسماك</div>
+      <img src="Logo.svg" alt="لوجو" class="logo">
+    </div>
+  </div>
+
+  <!-- شريط الأخبار -->
+  <div class="news-ticker">
+    <div class="ticker-text">
+      سردينا رقم واحد في أسوان &nbsp;|&nbsp; سردينا رقم واحد في أسوان &nbsp;|&nbsp; سردينا رقم واحد في أسوان
+    </div>
+  </div>
+
+  <!-- الصور -->
+  <div class="images">
+    <img src="menu2.jpg" alt="منيو 1">
+    <img src="menu1.jpg" alt="منيو 2">
+    <img src="menu3.jpg" alt="منيو 3">
+  </div>
+
+  <!-- الأزرار -->
+  <div class="buttons">
+    <a href="tel:01117773757" class="call">اتصل بنا</a>
+    <a href="https://www.facebook.com/SardinaSeafood" target="_blank">تابعنا على فيسبوك</a>
+  </div>
+
+</body>
+</html>
