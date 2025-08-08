@@ -16,7 +16,6 @@
       direction: rtl;
     }
 
-    /* الهيدر */
     .header {
       padding: 20px;
       background-color: #ffffff;
@@ -45,7 +44,12 @@
       flex: 1;
     }
 
-    /* شريط الأخبار */
+    .subtitle {
+      font-size: 16px;
+      color: #777;
+      margin-top: 4px;
+    }
+
     .news-ticker {
       width: 100%;
       overflow: hidden;
@@ -67,7 +71,6 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* الصور */
     .images {
       display: flex;
       flex-direction: column;
@@ -90,13 +93,11 @@
       .images {
         flex-direction: row;
       }
-
       .images img {
         width: 33.3%;
       }
     }
 
-    /* الأزرار */
     .buttons {
       text-align: center;
       margin: 30px 0;
@@ -116,6 +117,60 @@
     .buttons a.call {
       background-color: #28a745;
     }
+
+    /* زر الاتصال */
+    .floating-call-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      width: 70px;
+      height: 70px;
+      background-color: #28a745;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .floating-call-btn:hover {
+      background-color: #1c7c31;
+    }
+
+    .floating-call-btn svg {
+      width: 40px;
+      height: 40px;
+      fill: white;
+    }
+
+    /* زر الفيسبوك */
+    .floating-fb-btn {
+      position: fixed;
+      bottom: 110px;
+      left: 25px;
+      width: 70px;
+      height: 70px;
+      background-color: #1877f2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .floating-fb-btn:hover {
+      background-color: #0f5dc9;
+    }
+
+    .floating-fb-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
   </style>
 </head>
 <body>
@@ -123,8 +178,10 @@
   <!-- الهيدر -->
   <div class="header">
     <div class="header-row">
-      <div class="title">مطعم سردينا للأسماك</div>
-      <div class="title">(منيو السفرة)</div>
+      <div class="title">
+        مطعم سردينا للأسماك
+        <div class="subtitle">(منيو السفرة)</div>
+      </div>
       <img src="Logo.svg" alt="لوجو" class="logo">
     </div>
   </div>
@@ -148,6 +205,20 @@
     <a href="tel:01117773757" class="call">اتصل بنا</a>
     <a href="https://www.facebook.com/SardinaSeafood" target="_blank">تابعنا على فيسبوك</a>
   </div>
+
+  <!-- زر الاتصال العائم -->
+  <a href="tel:0123" class="floating-call-btn" title="اتصل بنا">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.21.49 2.53.76 3.88.76.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.4 21 3 13.6 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.35.26 2.67.76 3.88.15.26.1.6-.21 1.11l-2.43 2.8z"/>
+    </svg>
+  </a>
+
+  <!-- زر فيسبوك العائم -->
+  <a href="https://www.facebook.com/SardinaSeafood" target="_blank" class="floating-fb-btn" title="تابعنا على فيسبوك">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+      <path d="M279.14 288l14.22-92.66h-88.91V132.09c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S268.43 0 225.36 0C141.09 0 89.09 54.42 89.09 153.12v68.22H0V288h89.09v224h107.8V288z"/>
+    </svg>
+  </a>
 
 </body>
 </html>
